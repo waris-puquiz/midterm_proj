@@ -11,7 +11,6 @@ public function borrowBook(){
   $data->execute();
   $results = $data->fetchAll();
   foreach ($results as $result) {
-        $bookid = $result->book_id;
         $qty = $result->qty;
   }
   if(isset($_GET['borrowid'])){
@@ -36,7 +35,6 @@ public function returnBook(){
     $data->execute();
     $results = $data->fetchAll();
     foreach ($results as $result) {
-          $bookid = $result->book_id;
           $qty = $result->qty;
     }
     if(isset($_GET['returnid'])){

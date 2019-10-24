@@ -1,3 +1,14 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/borrow.php';
+$borrow = new borrow;
+$borrow->borrowBook();
+$borrow->returnBook();
+ ?>
+ <?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/logout.php';
+$log = new logout;
+$log->logoutAccount();
+?>
 <!DOCTYPE html>
 <html  lang="en">
 <head>
@@ -16,8 +27,8 @@
           <button class="navbar-toggler bg-white" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse " id="navbarNav">
               <ul class="navbar-nav ml-auto navbar-light">
-                <form action="" method="GET" class="form-inline my-2 my-lg-0">
-                  <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="#">Log Out</a></li>
+                <form action="" method="POST" class="form-inline my-2 my-lg-0">
+                  <li class="nav-item"><button class="btn text-danger mr-3 mt-sm-3" name="logout" style="background-color:transparent">Log Out</button></li>
                 </form>
               </ul>
             </div>
@@ -26,43 +37,16 @@
   </header>
   <body>
     <div class="pt-4 bg-dark"></div>
-
 <div class="container">
-
-    <table class="table table-striped custab text-center">
-    <thead>
-        <tr class="text-danger">
-            <th>Name of Book</th>
-            <th>Author</th>
-            <th>Published Date</th>
-            <th>Availability</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-            <tr>
-
-                <td>News</td>
-                <td>jose rizal</td>
-                <td>1</td>
-                <td></td>
-                <td><a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span>Borrow</a></td>
-            </tr>
-            </tr>
-            <tr>
-                <td>Main Products</td>
-                <td>antonio luna</td>
-                <td>2</td>
-                <td></td>
-              <td><a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span>Borrow</a></td>
-            </tr>
-            <tr>
-                <td>Parent Blogs</td>
-                <td>apolinario mabini</td>
-                <td>3</td>
-                <td></td>
-                <td><a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span>Borrow</a></td>
-            </tr>
-    </table>
+  <?php
+  require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/view.php';
+    $view = new view;
+    if(isset($_GET['submit'])){
+    $view->viewAllCriteria();
+    }else{
+    $view->viewAllData();
+    }
+  ?>
 </div>
 
   </body>

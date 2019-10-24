@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/db/config.php';
-class view extends config{
+class admin_view extends config{
   public function viewAllData(){
               $config = new config;
               $pdo = $config->Connect();
@@ -25,15 +25,6 @@ class view extends config{
               $data->execute();
               $results = $data->fetchAll(PDO::FETCH_OBJ);
 
-              $sql = "SELECT * FROM `account`";
-              $data = $pdo->prepare($sql);
-              $data->execute();
-              $rows = $data->fetchAll(PDO::FETCH_OBJ);
-
-              foreach ($rows as $row) {
-                $brw = $row->brw_status;
-              }
-
               echo '<table style="width:100%" class="table table-striped custab">';
               echo '<tr class="text-danger">';
               echo '<th>Book Name</th><th>Author</th><th>Published Date</th><th>Available</th><th>Action</th>';
@@ -44,14 +35,9 @@ class view extends config{
               echo '<td>'.$result->author.'</td>';
               echo '<td>'.$result->datePublished.'</td>';
               echo '<td>'.$result->qty.'</td>';
-              echo "<form method='GET' action=''>";
-              if ($row->status >= 0) {
-                $brw--;
-                echo  '<td> <a class="btn btn-warning" name="return" href="?returnid='.$result->book_id.'">Return</a></td>';
-              }else{
-                echo  '<td> <a class="btn btn-primary" name="borrow" href="?borrowid='.$result->book_id.'">Borrow</a></td>';
-              }
-              echo "</form>";
+              echo '<form method="GET" action="">';
+              echo  '<td><a class="btn btn-success" name="return" href="?returnid='.$result->book_id.'">+ Add New Stock</a></td>';
+              echo '</form>';
               echo '</tr>';
               }
               echo '</table>';

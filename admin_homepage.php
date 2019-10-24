@@ -1,3 +1,13 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/borrow.php';
+$borrow = new borrow;
+$borrow->returnBook();
+ ?>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/logout.php';
+$log = new logout;
+$log->logoutAccount();
+?>
 <!DOCTYPE html>
 <html  lang="en">
 <head>
@@ -16,10 +26,10 @@
           <button class="navbar-toggler bg-white" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse " id="navbarNav">
               <ul class="navbar-nav ml-auto navbar-light">
-                <form action="" method="GET" class="form-inline my-2 my-lg-0">
-                  <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="#">Add New Member</a></li>
-                  <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="#">Add New Book</a></li>
-                  <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="#">Log Out</a></li>
+                <form action="" method="POST" class="form-inline my-2 my-lg-0">
+                  <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="new.php">Add New Member</a></li>
+                  <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="newbook.php">Add New Book</a></li>
+                  <li class="nav-item"><button class="btn text-danger mr-3 mt-sm-3" name="logout" style="background-color:transparent">Log Out</button></li>
                 </form>
               </ul>
             </div>
@@ -27,36 +37,17 @@
         </nav>
   </header>
   <body>
-    <div class="pt-4 bg-dark"></div>
-
+<div class="pt-4 bg-dark"></div>
 <div class="container">
-
-    <table class="table table-striped custab">
-    <thead>
-    <a href="#" class="btn btn-success btn-xs pull-right mt-3 mb-3"><b>+</b> Add New Stock</a>
-        <tr class="text-danger">
-            <th>Name of Book</th>
-            <th>Author</th>
-            <th>Qty.</th>
-        </tr>
-    </thead>
-            <tr>
-
-                <td>News</td>
-                <td>jose rizal</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>Main Products</td>
-                <td>antonio luna</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Parent Blogs</td>
-                <td>apolinario mabini</td>
-                <td>3</td>
-            </tr>
-    </table>
+  <?php
+  require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/admin_view.php';
+    $view = new admin_view;
+    if(isset($_GET['submit'])){
+    $view->viewAllCriteria();
+    }else{
+    $view->viewAllData();
+    }
+  ?>
 </div>
 
   </body>
@@ -102,7 +93,7 @@
     </div>
   </div>
   </footer>
-  </html>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
