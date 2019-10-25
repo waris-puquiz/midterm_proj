@@ -66,7 +66,7 @@
       <div class="row">
         <div class="col-md-4 col-sm-6">
           <h3>ABOUT BOOKUP </h3>
-          <div class="footer-logo"><img src="resource/img/logo1.png" width= 150 height= 80 alt=""></div>
+          <div class="footer-logo"><img src="resource/img/logo2.png" width= 150 height= 80 alt=""></div>
           <p>Integer ac lorem sit amet est rhoncus dapi bus don cad pede acus morbi elit nunc molestie at ultrices eu eleifen lorem ut dictum erat masa... <a href="#">Read More</a></p>
         </div>
         <div class="col-md-2 col-sm-6">

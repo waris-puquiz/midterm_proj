@@ -7,6 +7,7 @@
   <title></title>
   <link rel="stylesheet" href="vendor/css/bootstrap.css">
   <link rel="stylesheet" href="resource/css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
   </head>
   <header>
     <nav class="navbar navbar-expand-sm navbar-light bg-white">
@@ -25,9 +26,7 @@
         </nav>
   </header>
   <body>
-    <div class="pt-4 bg-dark">
-
-    </div>
+    <div class="pt-4 bg-dark"></div>
     <div class="container pt-sm-5">
       <div class="row">
         <div class="col mx-auto">
@@ -46,7 +45,7 @@
           <div class="carousel-item active">
             <img class="d-block w-100" src="resource/img/book2.jpg" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-              <h3>Carousel text</h3>
+              <h3>Rent Books for FREE</h3>
               <p>  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
               </p>
             </div>
@@ -54,24 +53,24 @@
           <div class="carousel-item">
             <img class="d-block w-100" src="resource/img/book3.jpg" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
-              <h3>Carousel text</h3>
+              <h3>Rent Books for FREE</h3>
               <p>  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
               </p>
             </div>
         </div>
-      </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="resource/img/book4.jpg" alt="Third slide">
-          </div>
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Carousel text</h3>
-            <p>  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </p>
-          </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="resource/img/book4.jpg" alt="Third slide">
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Rent Books for FREE</h3>
+          <p>  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </p>
         </div>
       </div>
-    </div>
+      </div>
 
+      </div>
+    </div>
   </body>
   <footer>
     <div class="footer-wrap">
@@ -79,7 +78,7 @@
       <div class="row">
         <div class="col-md-4 col-sm-6">
           <h3>ABOUT BOOKUP </h3>
-          <div class="footer-logo"><img src="resource/img/logo1.png" width= 150 height= 80 alt=""></div>
+          <div class="footer-logo"><img src="resource/img/logo2.png" width= 150 height= 80 alt=""></div>
           <p>Integer ac lorem sit amet est rhoncus dapi bus don cad pede acus morbi elit nunc molestie at ultrices eu eleifen lorem ut dictum erat masa... <a href="#">Read More</a></p>
         </div>
         <div class="col-md-2 col-sm-6">
@@ -107,8 +106,8 @@
         <div class="col-md-3 col-sm-6">
           <h3>CONTACT US</h3>
           <div class="address">CEU Malolos PHL BLDG. </div>
-          <div class="info"><i class="fa fa-phone text-light" aria-hidden="true"></i> <a href="#.">(099) 123 4567</a></div>
-          <div class="info"><i class="fa fa-fax text-light" aria-hidden="true"></i> <a href="#.">(099) 123 4567</a></div>
+          <div class="info"><i class="fa fa-phone" aria-hidden="true"></i> <a href="#.">(099) 123 4567</a></div>
+          <div class="info"><i class="fa fa-fax" aria-hidden="true"></i> <a href="#.">(099) 123 4567</a></div>
         </div>
       </div>
       <div class="copyright">Copyright © 2019 BOOK UP BOOK RENTALS - All Rights Reserved.</div>
