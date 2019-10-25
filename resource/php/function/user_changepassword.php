@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/db/config.php';
 class user_changepassword extends config{
-  public $account_id
+  public $account_id;
   public $changepassword;
 
 public function __construct($account_id=null,$changepassword=null){

@@ -1,11 +1,11 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/user_transaction.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/user_changepassword.php';
 session_start();
-if(!empty($_GET['id'])){
-  $_SESSION['id'] = $_GET['id'];
+if(!empty($_GET['account_id'])){
+  $_SESSION['account_id'] = $_GET['account_id'];
 }
 if(isset($_GET['save'])){
-$user_changepassword = new user_transaction($_SESSION['id'],$_POST['new_password']);
+$user_changepassword = new user_transaction($_SESSION['account_id'],$_GET['password']);
 $user_changepassword->user_changepassword();
 header("Location: user_homepage.php");
 }?>
@@ -40,11 +40,11 @@ header("Location: user_homepage.php");
           <div class="card">
             <div class="card-header">Change password</div>
             <div class="card-body">
-              <form class="form-container" action="" method="POST">
+              <form class="form-container" action="" method="GET">
         				<div class="form-row">
         					<div class="form-group col-md-12">
                     <label for="new_password">Enter Your New Password</label>
-                    <input type="password" name="new_password" id="new_password" class="form-control bg-light text-dark" autocomplete="off" required/>
+                    <input type="password" name="password" id="new_password" class="form-control bg-light text-dark" autocomplete="off" required/>
                   </div>
         				<div class="form-group col-md-12">
         					<input type="submit" value="Save" class="btn btn-primary btn-block" style="background-color: #2c296e;" name="save"/>

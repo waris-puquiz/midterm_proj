@@ -3,9 +3,12 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/user_tran
 session_start();
 if(!empty($_GET['id'])){
   $_SESSION['id'] = $_GET['id'];
+  $_SESSION['bookName'] = $_GET['bookName'];
+  $_SESSION['datePublished'] = $_GET['datePublished'];
+  $_SESSION['account_id'] = $_GET['account_id'];
 }
 if(isset($_GET['borrow'])){
-$user_transaction = new user_transaction($_SESSION['id'],$_SESSION['bookName'],$_SESSION['author'],$_SESSION['datePublished']);
+$user_transaction = new user_transaction($_SESSION['id'],$_SESSION['bookName'],$_SESSION['author'],$_SESSION['datePublished'],$_SESSION['account_id']);
 $user_transaction->user_transaction();
 header("Location: user_homepage.php");
 }
@@ -25,8 +28,14 @@ $user_transaction->user_transactionShow();
   <body>
     <header>
       <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container justify-content-center">
+        <div class="container">
           <a class="navbar-brand" href="register.php"><IMG SRC="resource/img/logo1.png" ALT="Logo" WIDTH=210 HEIGHT=80></a>
+            <button class="navbar-toggler bg-white" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ml-auto navbar-light">
+                    <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="user_homepage.php">Go back</a></li>
+                </ul>
+              </div>
             </div>
           </nav>
     </header>

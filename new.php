@@ -24,7 +24,6 @@ if(isset($_POST['add'])){
             <button class="navbar-toggler bg-white" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
               <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ml-auto navbar-light">
-                  <form action="" method="POST" class="form-inline my-2 my-lg-0">
                     <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="admin_homepage.php">Go back</a></li>
                 </ul>
               </div>

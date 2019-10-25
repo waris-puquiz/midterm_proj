@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/db/config.php';
 class view extends config{
+        public $account_id;
   public function viewAllData(){
               $config = new config;
               $pdo = $config->Connect();
@@ -29,6 +30,7 @@ class view extends config{
               $data = $pdo->prepare($sql);
               $data->execute();
               $rows = $data->fetchAll(PDO::FETCH_OBJ);
+              $account_id = $this->account_id;
               foreach ($rows as $row) {
                 $account_id = $row->account_id;
               }
@@ -43,7 +45,7 @@ class view extends config{
               echo '<td>'.$result->author.'</td>';
               echo '<td>'.$result->datePublished.'</td>';
               echo '<td>'.$result->qty.'</td>';
-              echo  '<td> <a class="btn btn-success" href="transaction.php?id='.$result->book_id.'&bookName='.$result->bookName.'&author='.$result->author.'&datePublished='.$result->datePublished.'"">Transact</a></td>';
+              echo  '<td> <a class="btn btn-success" href="transaction.php?id='.$result->book_id.'&bookName='.$result->bookName.'&author='.$result->author.'&datePublished='.$result->datePublished.'&account_id='.$row->account_id.'"">Transact</a></td>';
               // echo "<form method='GET' action=''>";
               // if ($_GET['borrowid'] == $result->book_id) {
               //   $brw--;
