@@ -17,6 +17,7 @@ public function login(){
     $data->execute([$username]);
     $rows = $data->fetchAll();
     foreach ($rows as $row) {
+      $account_id2 = $row->account_id;
       $username2 = $row->username;
       $password2 = $row->password;
       $account_status2 = $row->account_status;
@@ -24,6 +25,7 @@ public function login(){
     if ($username == $username2 && $password == $password2 && $account_status2 == "admin"){
     header('location: admin_homepage.php');
   }elseif ($username == $username2 && $password == $password2 && $account_status2 == "user") {
+    $_SESSION['account_id'] = $account_id2;
     header('location: user_homepage.php');
   }else {
     $fail = "Failed to login!";

@@ -24,7 +24,9 @@ class admin_view extends config{
               $data = $pdo->prepare($sql);
               $data->execute();
               $results = $data->fetchAll(PDO::FETCH_OBJ);
-
+              echo '<div class="row float-right ">';
+              echo '<td><a class="btn btn-success text-white mr-3 mt-3" href="new.php">+ Add New Member</a></td> <td><a class="btn btn-success text-white mr-3 mt-3" href="newbook.php">+ Add New Book</a></td>';
+              echo "</div>'";
               echo '<table style="width:100%" class="table table-striped custab">';
               echo '<tr class="text-danger">';
               echo '<th>Book Name</th><th>Author</th><th>Published Date</th><th>Available</th><th>Action</th>';

@@ -1,11 +1,14 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/addbook.php';
-if (isset($_POST['bookname'])) {
-  $addbook = new addbook($_POST['bookname'],$_POST['author'],$_POST['date'],$_POST['stock']);
-  $addbook->addbook();
-  header("Location: admin_homepage.php");
+require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/user_transaction.php';
+session_start();
+if(!empty($_GET['id'])){
+  $_SESSION['id'] = $_GET['id'];
 }
-?>
+if(isset($_GET['save'])){
+$user_changepassword = new user_transaction($_SESSION['id'],$_POST['new_password']);
+$user_changepassword->user_changepassword();
+header("Location: user_homepage.php");
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +28,7 @@ if (isset($_POST['bookname'])) {
               <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ml-auto navbar-light">
                   <form action="" method="POST" class="form-inline my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="admin_homepage.php">Go back</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger mr-3 mt-sm-3" href="user_homepage.php">Go back</a></li>
                 </ul>
               </div>
             </div>
@@ -35,29 +38,16 @@ if (isset($_POST['bookname'])) {
       <section class="row justify-content-center mt-5">
         <section class="col-12 col-sm-6 col-md-3">
           <div class="card">
-            <div class="card-header">Add new book</div>
+            <div class="card-header">Change password</div>
             <div class="card-body">
               <form class="form-container" action="" method="POST">
         				<div class="form-row">
         					<div class="form-group col-md-12">
-                    <label for="bookname">Name of Book</label>
-                    <input type="text" name="bookname" id="bookname" class="form-control" autocomplete="off" required/>
+                    <label for="new_password">Enter Your New Password</label>
+                    <input type="password" name="new_password" id="new_password" class="form-control bg-light text-dark" autocomplete="off" required/>
                   </div>
-        					<div class="form-group col-md-12">
-                    <label for="author">Author</label>
-                    <input type="text" name="author" id="author" class="form-control bg-light text-dark" autocomplete="off" required/>
-                  </div>
-                  <div class="form-group col-md-12">
-                    <label for="date">Date of Published</label>
-                    <input type="date" name="date" id="date" class="form-control bg-light text-dark" autocomplete="off" required/>
-                  </div>
-                  <div class="form-group col-md-12">
-                    <label for="stock">Stock</label>
-                    <input type="stock" name="stock" id="stock" class="form-control bg-light text-dark" autocomplete="off" required/>
-                  </div>
-        				</div>
-        				<div class="form-group">
-        					<input type="submit" value="Add book" class="btn btn-primary btn-block" style="background-color: #2c296e;" name="addbook"/>
+        				<div class="form-group col-md-12">
+        					<input type="submit" value="Save" class="btn btn-primary btn-block" style="background-color: #2c296e;" name="save"/>
         				</div>
         			</form>
             </div>

@@ -29,9 +29,8 @@ class view extends config{
               $data = $pdo->prepare($sql);
               $data->execute();
               $rows = $data->fetchAll(PDO::FETCH_OBJ);
-
               foreach ($rows as $row) {
-                $brw = $row->brw_status;
+                $account_id = $row->account_id;
               }
 
               echo '<table style="width:100%" class="table table-striped custab">';
@@ -44,14 +43,26 @@ class view extends config{
               echo '<td>'.$result->author.'</td>';
               echo '<td>'.$result->datePublished.'</td>';
               echo '<td>'.$result->qty.'</td>';
-              echo "<form method='GET' action=''>";
-              if ($row->status >= 0) {
-                $brw--;
-                echo  '<td> <a class="btn btn-warning" name="return" href="?returnid='.$result->book_id.'">Return</a></td>';
-              }else{
-                echo  '<td> <a class="btn btn-primary" name="borrow" href="?borrowid='.$result->book_id.'">Borrow</a></td>';
-              }
-              echo "</form>";
+              echo  '<td> <a class="btn btn-success" href="transaction.php?id='.$result->book_id.'&bookName='.$result->bookName.'&author='.$result->author.'&datePublished='.$result->datePublished.'"">Transact</a></td>';
+              // echo "<form method='GET' action=''>";
+              // if ($_GET['borrowid'] == $result->book_id) {
+              //   $brw--;
+              //   echo  '<td> <a class="btn btn-warning" name="return" href="?returnid='.$result->book_id.'">Return</a></td>';
+              //   if ($_GET['returnid'] == $result->book_id) {
+              //
+              //   }else {
+              //     $brw++;
+              //     echo  '<td> <a class="btn btn-primary" name="borrow" href="?borrowid='.$result->book_id.'">Borrow</a></td>';
+              //   }
+              // }else {
+              //   $brw++;
+              //   echo  '<td> <a class="btn btn-primary" name="borrow" href="?borrowid='.$result->book_id.'">Borrow</a></td>';
+              // }
+              //
+              // $sql = "UPDATE `account` SET `brw_status`= $brw WHERE `account_id` = 3";
+              // $data = $pdo->prepare($sql);
+              // $data->execute();
+              // echo "</form>";
               echo '</tr>';
               }
               echo '</table>';
