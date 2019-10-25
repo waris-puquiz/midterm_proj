@@ -24,7 +24,6 @@
             </div>
           </nav>
     </header>
-
     <section class="container-fluid">
       <section class="row justify-content-center mt-5">
         <section class="col-12 col-sm-6 col-md-3">
@@ -59,6 +58,49 @@
         </section>
       </section>
     </section>
+
+    <footer>
+      <div class="footer-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <h3>ABOUT BOOKUP </h3>
+            <div class="footer-logo"><img src="resource/img/logo2.png" width= 150 height= 80 alt=""></div>
+            <p>Integer ac lorem sit amet est rhoncus dapi bus don cad pede acus morbi elit nunc molestie at ultrices eu eleifen lorem ut dictum erat masa... <a href="#">Read More</a></p>
+          </div>
+          <div class="col-md-2 col-sm-6">
+            <h3>Book Up Links</h3>
+            <ul class="footer-links">
+              <li><a href="#.">Home</a></li>
+              <li><a href="#.">About Us</a></li>
+              <li><a href="#.">Categories</a></li>
+              <li><a href="#.">Genres</a></li>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <h3>MAIN CATEGORIES</h3>
+            <ul class="footer-category">
+              <li><a href="#.">Information Technology</a></li>
+              <li><a href="#.">Sci-Fi</a></li>
+              <li><a href="#.">Romance</a></li>
+              <li><a href="#.">Animals</a></li>
+              <li><a href="#.">Literature</a></li>
+              <li><a href="#.">Architecture</a></li>
+              <li><a href="#.">Marketing</a></li>
+              <li><a href="#.">Livelihood</a></li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <h3>CONTACT US</h3>
+            <div class="address">CEU Malolos PHL BLDG. </div>
+            <div class="info"><i class="fa fa-phone" aria-hidden="true"></i> <a href="#.">(099) 123 4567</a></div>
+            <div class="info"><i class="fa fa-fax" aria-hidden="true"></i> <a href="#.">(099) 123 4567</a></div>
+          </div>
+        </div>
+        <div class="copyright">Copyright © 2019 BOOK UP BOOK RENTALS - All Rights Reserved.</div>
+      </div>
+    </div>
+    </footer>
 
   </body>
   </html>

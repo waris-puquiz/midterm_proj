@@ -1,3 +1,11 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/midterm/resource/php/function/login.php';
+session_start();
+if(isset($_POST['login'])){
+  $login = new login($_POST['username'],$_POST['password']);
+  $login->login();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +14,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title></title>
   <link rel="stylesheet" href="vendor/css/bootstrap.css">
-  <link rel="stylesheet" href="resource/css/style.css">
+  <link rel="stylesheet" href="resource/css/style2.css">
   </head>
   <body>
     <h2>para ma view</h2>
